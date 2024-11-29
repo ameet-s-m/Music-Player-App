@@ -2,7 +2,7 @@ console.log("Welcome to Melody Mix");
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio('songs/[i].mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gif = document.getElementById('gif');
     let audioElement = new Audio();
     let isPlaying = false;
+    masterSongName.innerText = '';
 
     // Toggle visibility of Playlists and Favorites dropdowns
     playlistButton.addEventListener('click', () => {
@@ -253,13 +254,13 @@ masterPlay.addEventListener('click', () => {
         audioElement.pause();
         masterPlay.classList.replace('fa-pause-circle', 'fa-play-circle');
         gif.style.opacity = 0;
-        isPlaying = false;
+        isPlaying = true;
         masterSongName.innerText = '';
     } else {
         audioElement.play();
         masterPlay.classList.replace('fa-play-circle', 'fa-pause-circle');
         gif.style.opacity = 1;
-        isPlaying = true;
+        isPlaying = false;
     }
 });
 
